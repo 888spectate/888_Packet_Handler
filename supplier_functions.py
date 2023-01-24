@@ -115,7 +115,7 @@ def metric(hostname, username, password, feedEventID, eventDates, event_folder, 
     # Verify JSON and XML packets pulled
     non_event_files = []
     for index, i in enumerate(os.listdir(event_folder)):
-        message = f"Event {currentEvent} of {total_event_count} - Checking file {index + 1} of {len(ftp_client.listdir(event_folder))} from directory {event_folder} for Fixture ID {feedEventID}."
+        message = f"Event {currentEvent} of {total_event_count} - Checking file {index + 1} of {len(os.listdir(event_folder))} from directory {event_folder} for Fixture ID {feedEventID}."
         label_message(progress_label, progress_label_string, message, 150, 420)
         if ".json" in str(i):
             f = open(f"{event_folder}/{i}")
