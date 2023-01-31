@@ -3,10 +3,7 @@ import paramiko
 
 supplier_remote_folders = [
     [
-        "/mnt/feeds_data/fi_lsports_connector/markets_meta",
-        "/mnt/feeds_data/fi_lsports_connector/outright_league_markets_meta",
-        "/mnt/feeds_data/fi_lsports_connector/outright_leagues_meta",
-        "/mnt/feeds_data/fi_lsports_connector/outright_meta"
+        ""
     ],
     [
         ""

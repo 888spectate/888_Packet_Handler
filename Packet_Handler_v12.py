@@ -274,7 +274,7 @@ def start_gathering_packets_details_functions():
         chosen_directories = supplier_folders.choose_supplier_directories(supplier, hostname, username, password)
         # Downloading files and pulling files with feed event id
         if supplier == 0:
-            supplier_functions.lsports(hostname, username, password, feedEventID, eventDates, event_folder, chosen_directories, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar)      
+            supplier_functions.lsports(hostname, username, password, feedEventID, eventDates, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar)
         elif supplier == 1:
             supplier_functions.sportscast(hostname, username, password, feedEventID, eventDates, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar)
         elif supplier == 2:
@@ -299,7 +299,7 @@ def start_gathering_packets_details_functions():
     start_gathering_packets_details["state"] = "disabled"
     server_options["state"] = "normal"
     progress_label_string.set("")
-    progress_bar["value"] = 0
+    supplier_functions.reset_progress(progress_bar)
     duration = time.strftime("%H:%M:%S", time.gmtime(time.time() - start))
     # Popup to let people know all packets have been gathered
     newWindow = Toplevel(root)
