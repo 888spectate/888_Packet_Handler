@@ -47,16 +47,13 @@ def sportscast(hostname, username, password, feedEventID, eventDates, event_fold
         remote_folder = f"/mnt/feeds_data/fi_sportcast_connector/{year}/{month}/{day}/{feedEventID}"
         event_in_folder_check(ftp_client, remote_folder, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, 175, 420, progress_bar, 100)
 
-def sportsradar(hostname, username, password, feedEventID, event_folder, chosen_directories, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar):
+def sportsradar(hostname, username, password, feedEventID, eventDates, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar):
     global total_progress
     ftp_client = connect_to_host(hostname, username, password)
-    for number, directory in enumerate(chosen_directories):
-        try:
-            remote_event_folder = f"{directory}/sr_match{feedEventID[-8:]}"
-            event_in_folder_check(ftp_client, remote_event_folder, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, 175, 420, progress_bar, 100)
-            break
-        except IOError:
-            print("Remote Folder not in this directory")
+    for index, format in enumerate(eventDates):
+        year, month, day = format[0:4], format[5:7], format[8:10]
+        remote_folder = f"/mnt/feeds_data/fi_sportradar_connector/{year}/{month}/{day}/{feedEventID}"
+        event_in_folder_check(ftp_client, remote_folder, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, 175, 420, progress_bar, 100)
 
 def swish(hostname, username, password, feedEventID, eventDates, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar):
     global total_progress

@@ -9,34 +9,7 @@ supplier_remote_folders = [
         ""
     ],
     [
-        "/mnt/feeds_data/fi_sportradar_connector/1",
-        "/mnt/feeds_data/fi_sportradar_connector/-1",
-        "/mnt/feeds_data/fi_sportradar_connector/2",
-        "/mnt/feeds_data/fi_sportradar_connector/3",
-        "/mnt/feeds_data/fi_sportradar_connector/4",
-        "/mnt/feeds_data/fi_sportradar_connector/5",
-        "/mnt/feeds_data/fi_sportradar_connector/6",
-        "/mnt/feeds_data/fi_sportradar_connector/12",
-        "/mnt/feeds_data/fi_sportradar_connector/13",
-        "/mnt/feeds_data/fi_sportradar_connector/16",
-        "/mnt/feeds_data/fi_sportradar_connector/19",
-        "/mnt/feeds_data/fi_sportradar_connector/20",
-        "/mnt/feeds_data/fi_sportradar_connector/21",
-        "/mnt/feeds_data/fi_sportradar_connector/22",
-        "/mnt/feeds_data/fi_sportradar_connector/23",
-        "/mnt/feeds_data/fi_sportradar_connector/24",
-        "/mnt/feeds_data/fi_sportradar_connector/29",
-        "/mnt/feeds_data/fi_sportradar_connector/31",
-        "/mnt/feeds_data/fi_sportradar_connector/32",
-        "/mnt/feeds_data/fi_sportradar_connector/34",
-        "/mnt/feeds_data/fi_sportradar_connector/37",
-        "/mnt/feeds_data/fi_sportradar_connector/109",
-        "/mnt/feeds_data/fi_sportradar_connector/110",
-        "/mnt/feeds_data/fi_sportradar_connector/111",
-        "/mnt/feeds_data/fi_sportradar_connector/137",
-        "/mnt/feeds_data/fi_sportradar_connector/153",
-        "/mnt/feeds_data/fi_sportradar_connector/155",
-        "/mnt/feeds_data/fi_sportradar_connector/195"
+        ""
     ],
     [
         ""

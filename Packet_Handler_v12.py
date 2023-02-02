@@ -59,7 +59,7 @@ def login_to_server():
         while (line := reader.readline()):
             if line.partition(' ')[0].partition(',')[0][0].isalpha() and "jump." in line:
               if line.partition(' ')[0].partition(',')[0] in known_host_servers:
-                print(f"{line.partition(' ')[0].partition(',')[0]} already in known_host_servers array")
+                continue
               else:
                 known_host_servers.append(line.partition(' ')[0].partition(',')[0])
     
@@ -180,20 +180,10 @@ def delete_date_function():
         delete_date_button["state"] = "disabled"
 
 def date_disabler(supplier):
-    for index, value in enumerate(supplier_options):
-        if supplier == value[1]:
-            supplier = index
-            break
-    if supplier == 2:
-        add_date_button["state"] = "disabled"
-        delete_date_button["state"] = "disabled"
-        for i in range(date_counter):
-            delete_date_function()
-    else:
-        for i in range(date_counter):
-            delete_date_function()
-        add_date_button["state"] = "normal"
-        delete_date_button["state"] = "disabled"
+    for i in range(date_counter):
+        delete_date_function()
+    add_date_button["state"] = "normal"
+    delete_date_button["state"] = "disabled"
 
 def add_event_details_function():
     global event_counter
@@ -231,13 +221,11 @@ def add_event_details_function():
             servername = known_host_servers[index]
             break
     
-    if not dates and supplier == 2:
-        events.append([supplier, servername, eventid, feedeventid, "0000-00-00"])
-    elif not dates and supplier != 2:
+    if not dates:
         newWindow = Toplevel(root)
         newWindow.title("888 Packet Handler")
         newWindow.geometry("500x50")
-        Label(newWindow, text="Dates are needed for this supplier", font=("Arial", 20)).pack()
+        Label(newWindow, text="Dates are needed to grab packets", font=("Arial", 20)).pack()
         return
     else:
         temp_dates = []
@@ -278,7 +266,7 @@ def start_gathering_packets_details_functions():
         elif supplier == 1:
             supplier_functions.sportscast(hostname, username, password, feedEventID, eventDates, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar)
         elif supplier == 2:
-            supplier_functions.sportsradar(hostname, username, password, feedEventID, event_folder, chosen_directories, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar)
+            supplier_functions.sportsradar(hostname, username, password, feedEventID, eventDates, event_folder, chosen_directories, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar)
         elif supplier == 3:
             supplier_functions.swish(hostname, username, password, feedEventID, eventDates, event_folder, progress_label, progress_label_string, currentEvent, total_event_count, progress_bar)
         elif supplier == 4:
