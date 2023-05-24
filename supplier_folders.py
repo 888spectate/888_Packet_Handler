@@ -1,6 +1,9 @@
 import os
 import paramiko
 
+# All direcotries for each supplier found
+# Some of these are blank 
+# (Keep them as they reference lsports, sportscast, sportsradar and swish in the supplier_options list)
 supplier_remote_folders = [
     [
         ""
@@ -50,6 +53,9 @@ supplier_remote_folders = [
     ]
 ]
 
+# Based on the server and supplier chosen for an event, not all directories are needed.
+# To ensure that the correct ones are added, this code will attempt to find the folders in the loop
+# If one is found, it will be added to the valid_folders list.
 def choose_supplier_directories(supplier, hostname, username, password):
     valid_folders = []
     ssh_client=paramiko.SSHClient()
